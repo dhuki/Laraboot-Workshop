@@ -13,11 +13,11 @@
             <div class="form-group">
                 <label>Jenis Kegiatan</label>
                 <select class="form-control" name= "jenis_kegiatan">
-                    <option <?php if($activity->jenis_kegiatan == 'option 1') { echo "selected"; } ?>>option 1</option>
-                    <option <?php if($activity->jenis_kegiatan == 'option 2') { echo "selected"; } ?>>option 2</option>
-                    <option <?php if($activity->jenis_kegiatan == 'option 3') { echo "selected"; } ?>>option 3</option>
-                    <option <?php if($activity->jenis_kegiatan == 'option 4') { echo "selected"; } ?>>option 4</option>
-                    <option <?php if($activity->jenis_kegiatan == 'option 5') { echo "selected"; } ?>>option 5</option>
+                    <option <?php if($activity->jenis_kegiatan == 'Kuliah') { echo "selected"; } ?>>Kuliah</option>
+                    <option <?php if($activity->jenis_kegiatan == 'Lab') { echo "selected"; } ?>>Lab</option>
+                    <option <?php if($activity->jenis_kegiatan == 'UKM') { echo "selected"; } ?>>UKM</option>
+                    <option <?php if($activity->jenis_kegiatan == 'HIMA') { echo "selected"; } ?>>HIMA</option>
+                    <option <?php if($activity->jenis_kegiatan == 'Refreshing') { echo "selected"; } ?>>Refreshing</option>
                 </select>
             </div>
             <div class="form-group">

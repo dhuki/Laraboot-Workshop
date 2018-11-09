@@ -12,11 +12,11 @@
             <div class="form-group">
                 <label>Jenis Kegiatan</label>
                 <select class="form-control" name= "jenis_kegiatan">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
+                    <option>Kuliah</option>
+                    <option>Lab</option>
+                    <option>UKM</option>
+                    <option>HIMA</option>
+                    <option>Refreshing</option>
                 </select>
             </div>
             <div class="form-group">
