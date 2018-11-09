@@ -15,7 +15,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 
 Auth::routes();
 
-Route::get('/activity/home', 'ListActivityController@index')->name('index');
+Route::get('/activity', 'ListActivityController@index')->name('index');
 Route::get('/activity/create', 'ListActivityController@create')->name('create');
 Route::post('/activity/store', 'ListActivityController@store')->name('store');
 Route::get('/activity/edit/{id}', 'ListActivityController@edit')->name('edit');
