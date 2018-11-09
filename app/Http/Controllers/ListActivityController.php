@@ -80,7 +80,14 @@ class ListActivityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $activity = ListActivity::find($id);
+        $activity->jenis_kegiatan = $request->jenis_kegiatan;
+        $activity->tanggal_kegiatan = $request->tanggal_kegiatan;
+        $activity->deskripsi_kegiatan = $request->deskripsi_kegiatan;
+        $activity->keterangan = $request->keterangan;
+        $activity->save();
+
+        return redirect('/ListActivity');
     }
 
     /**
