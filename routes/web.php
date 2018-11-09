@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ListActivityController@index')->name('home');
 Route::post('/home', 'ListActivityController@store')->name('store');
 Route::get('/ListActivity', 'ListActivityController@show')->name('ListActivity');
 Route::post('/ListActivity/{id}', 'ListActivityController@destroy')->name('destroy');
