@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\ListActivity;
 
 class ListActivityController extends Controller
@@ -14,7 +15,8 @@ class ListActivityController extends Controller
      */
     public function index()
     {
-        return view('list-activity.index');
+        $activity = ListActivity::where('user_id', Auth::id())->get();
+        return view('list-activity.index', compact('activity'));
     }
 
     /**
@@ -37,7 +39,7 @@ class ListActivityController extends Controller
     {
         $activity = new ListActivity([
             'id' => $request->id,
-            'user_id' => $request->user()->id,
+            'user_id' => Auth::id(),
             'jenis_kegiatan' => $request->jenis_kegiatan,
             'tanggal_kegiatan' => $request->tanggal_kegiatan,
             'deskripsi_kegiatan' => $request->deskripsi_kegiatan,
@@ -45,7 +47,7 @@ class ListActivityController extends Controller
         ]);
         $activity->save();
 
-        return view('home');
+        return redirect()->route('index');
     }
 
     /**
@@ -69,7 +71,7 @@ class ListActivityController extends Controller
     public function edit($id)
     {
         $activity = ListActivity::find($id);
-        return view('ListActivity.edit', compact($activity));
+        return view('list-activity.edit', compact('activity'));
     }
 
     /**
@@ -88,7 +90,7 @@ class ListActivityController extends Controller
         $activity->keterangan = $request->keterangan;
         $activity->save();
 
-        return redirect('/ListActivity');
+        return redirect()->route('index');
     }
 
     /**
@@ -100,6 +102,6 @@ class ListActivityController extends Controller
     public function destroy($id)
     {
         $list = ListActivity::find($id)->delete();
-        return redirect('/ListActivity');
+        return redirect()->route('index');
     }
 }
