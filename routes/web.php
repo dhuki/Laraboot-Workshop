@@ -21,5 +21,5 @@ Route::get('/activity/home', 'ListActivityController@index')->name('index');
 Route::get('/activity/create', 'ListActivityController@create')->name('create');
 Route::post('/activity/store', 'ListActivityController@store')->name('store');
 Route::get('/activity/edit/{id}', 'ListActivityController@edit')->name('edit');
-Route::put('/activity/update/{id}', 'ListActivityController@edit')->name('update');
+Route::put('/activity/update/{id}', 'ListActivityController@update')->name('update');
 Route::post('/activity/delete/{id}', 'ListActivityController@destroy')->name('destroy');
