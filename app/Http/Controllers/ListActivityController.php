@@ -99,7 +99,6 @@ class ListActivityController extends Controller
      */
     public function destroy($id)
     {
-        //$list = ListActivity::where('id',$id)->delete();
         $list = ListActivity::find($id)->delete();
         return redirect('/ListActivity');
     }
