@@ -19,33 +19,23 @@
         </tr>
         </thead>
         <tbody>
-        @if(count($activity) >= 1)
-          @foreach($activity as $activity)
-            <tr>
-              <td> {{ $activity->jenis_kegiatan }} </td>
-              <td> {{ $activity->tanggal_kegiatan }} </td>
-              <td> {{ $activity->deskripsi_kegiatan }} </td>
-              <td> {{ $activity->keterangan }} </td>
-              <td>
-								<a type="button" class="btn btn-warning" href="{{ route('edit', $activity) }}"><i class="fa fa-edit"></i></a>
-								<form role="form" method="post" action="{{ route('destroy', $activity) }}">
-                    @csrf
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-danger"><i class="fa fa-close"></i></button>
-                    </div>
-                </form>
-              </td>
-            </tr>
-          @endforeach
-        @else
+        @foreach($activity as $activity)
           <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-						<td>-</td>
-						<td>-</td>
+            <td> {{ $activity->jenis_kegiatan }} </td>
+            <td> {{ $activity->tanggal_kegiatan }} </td>
+            <td> {{ $activity->deskripsi_kegiatan }} </td>
+            <td> {{ $activity->keterangan }} </td>
+            <td>
+              <a type="button" class="btn btn-warning" href="{{ route('edit', $activity) }}"><i class="fa fa-edit"></i></a>
+              <form role="form" method="post" action="{{ route('destroy', $activity) }}">
+                  @csrf
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-close"></i></button>
+                  </div>
+              </form>
+            </td>
           </tr>
-        @endif
+        @endforeach
         </tbody>
       </table>
     </div>
