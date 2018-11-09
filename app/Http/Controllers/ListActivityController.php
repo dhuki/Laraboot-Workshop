@@ -35,16 +35,16 @@ class ListActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $list = new ListActivity([
-            'id' => $request->get('id'),
+        $activity = new ListActivity([
+            'id' => $request->id,
             'user_id' => $request->user()->id,
-            'jenis_kegiatan' => $request->get('jenis_kegiatan'),
-            'tanggal_kegiatan' => $request->get('tanggal_kegiatan'),
-            'deskripsi_kegiatan' => $request->get('deskripsi_kegiatan'),
-            'keterangan' => 'Not Yet',
+            'jenis_kegiatan' => $request->jenis_kegiatan,
+            'tanggal_kegiatan' => $request->tanggal_kegiatan,
+            'deskripsi_kegiatan' => $request->deskripsi_kegiatan,
+            'keterangan' => 'To Do',
         ]);
+        $activity->save();
 
-        $list->save();
         return view('home');
     }
 
@@ -54,10 +54,10 @@ class ListActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $req)
+    public function show(Request $request)
     {
-        $list = ListActivity::where('user_id',$req->user()->id)->get();
-        return view('ListActivity')->with('listActivity', $list);
+        $activity = ListActivity::where('user_id',$request->user()->id)->get();
+        return view('ListActivity')->with('listActivity', $activity);
     }
 
     /**
