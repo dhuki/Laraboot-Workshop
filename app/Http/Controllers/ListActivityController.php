@@ -14,7 +14,7 @@ class ListActivityController extends Controller
      */
     public function index()
     {
-        return view('ListActivity');
+        return view('list-activity.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ListActivityController extends Controller
      */
     public function create()
     {
-        //
+        return view('list-activity.create');
     }
 
     /**
