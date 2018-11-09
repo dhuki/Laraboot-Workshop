@@ -68,7 +68,8 @@ class ListActivityController extends Controller
      */
     public function edit($id)
     {
-        //
+        $activity = ListActivity::find($id);
+        return view('ListActivity.edit', compact($activity));
     }
 
     /**
