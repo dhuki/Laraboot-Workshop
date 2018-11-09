@@ -27,7 +27,7 @@
               <td> {{ $activity->deskripsi_kegiatan }} </td>
               <td> {{ $activity->keterangan }} </td>
               <td>
-								<button type="submit" class="btn btn-danger"><i class="fa fa-close"></i></button>
+								<a type="button" class="btn btn-warning" href="{{ route('edit', $activity) }}"><i class="fa fa-edit"></i></a>
 								<form role="form" method="post" action="{{ route('destroy', $activity) }}">
                     @csrf
                     <div class="form-group">
