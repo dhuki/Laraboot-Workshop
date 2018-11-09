@@ -63,8 +63,7 @@ class ListActivityController extends Controller
      */
     public function show(Request $request)
     {
-        $activity = ListActivity::where('user_id',$request->user()->id)->get();
-        return view('ListActivity')->with('listActivity', $activity);
+        // 
     }
 
     /**
