@@ -25,7 +25,7 @@
                 <div class="input-group date">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
-                  </div>    
+                  </div>
                   <input type="text" class="form-control pull-right" id="datepicker" name="tanggal_kegiatan">
                 </div>
             </div>
@@ -41,7 +41,7 @@
             </div>
         </form>
     </div>
-      
+
     <!-- /.box-body -->
 </div>
 <!-- /.box -->

@@ -19,15 +19,16 @@
         </tr>
         </thead>
         <tbody>
-        @if(count($listActivity) >= 1)
-          @foreach($listActivity as $Activity)
+        @if(count($activity) >= 1)
+          @foreach($activity as $activity)
             <tr>
-              <td> {{ $Activity->jenis_kegiatan }} </td>
-              <td> {{ $Activity->tanggal_kegiatan }} </td>
-              <td> {{ $Activity->deskripsi_kegiatan }} </td>
-              <td> {{ $Activity->keterangan }} </td>
+              <td> {{ $activity->jenis_kegiatan }} </td>
+              <td> {{ $activity->tanggal_kegiatan }} </td>
+              <td> {{ $activity->deskripsi_kegiatan }} </td>
+              <td> {{ $activity->keterangan }} </td>
               <td>
-                <form role="form" method="post" action="{{ route('destroy', $Activity) }}">
+								<a type="button" class="btn btn-warning" href="{{ route('edit', $activity) }}"><i class="fa fa-edit"></i></a>
+								<form role="form" method="post" action="{{ route('destroy', $activity) }}">
                     @csrf
                     <div class="form-group">
                       <button type="submit" class="btn btn-danger"><i class="fa fa-close"></i></button>

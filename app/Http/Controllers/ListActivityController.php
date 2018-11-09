@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\ListActivity;
 
 class ListActivityController extends Controller
@@ -14,7 +15,8 @@ class ListActivityController extends Controller
      */
     public function index()
     {
-        return view('ListActivity');
+        $activity = ListActivity::where('user_id', Auth::id())->get();
+        return view('list-activity.index', compact('activity'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ListActivityController extends Controller
      */
     public function create()
     {
-        //
+        return view('list-activity.create');
     }
 
     /**
@@ -35,17 +37,17 @@ class ListActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $list = new ListActivity([
-            'id' => $request->get('id'),
-            'user_id' => $request->user()->id,
-            'jenis_kegiatan' => $request->get('jenis_kegiatan'),
-            'tanggal_kegiatan' => $request->get('tanggal_kegiatan'),
-            'deskripsi_kegiatan' => $request->get('deskripsi_kegiatan'),
-            'keterangan' => 'Not Yet',
+        $activity = new ListActivity([
+            'id' => $request->id,
+            'user_id' => Auth::id(),
+            'jenis_kegiatan' => $request->jenis_kegiatan,
+            'tanggal_kegiatan' => $request->tanggal_kegiatan,
+            'deskripsi_kegiatan' => $request->deskripsi_kegiatan,
+            'keterangan' => 'To Do',
         ]);
+        $activity->save();
 
-        $list->save();
-        return view('home');
+        return redirect()->route('index');
     }
 
     /**
@@ -54,10 +56,10 @@ class ListActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $req)
+    public function show(Request $request)
     {
-        $list = ListActivity::where('user_id',$req->user()->id)->get();
-        return view('ListActivity')->with('listActivity', $list);
+        $activity = ListActivity::where('user_id',$request->user()->id)->get();
+        return view('ListActivity')->with('listActivity', $activity);
     }
 
     /**
@@ -68,7 +70,8 @@ class ListActivityController extends Controller
      */
     public function edit($id)
     {
-        //
+        $activity = ListActivity::find($id);
+        return view('list-activity.edit', compact('activity'));
     }
 
     /**
@@ -80,7 +83,14 @@ class ListActivityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $activity = ListActivity::find($id);
+        $activity->jenis_kegiatan = $request->jenis_kegiatan;
+        $activity->tanggal_kegiatan = $request->tanggal_kegiatan;
+        $activity->deskripsi_kegiatan = $request->deskripsi_kegiatan;
+        $activity->keterangan = $request->keterangan;
+        $activity->save();
+
+        return redirect()->route('index');
     }
 
     /**
@@ -91,8 +101,7 @@ class ListActivityController extends Controller
      */
     public function destroy($id)
     {
-        //$list = ListActivity::where('id',$id)->delete();
         $list = ListActivity::find($id)->delete();
-        return redirect('/ListActivity');
+        return redirect()->route('index');
     }
 }
