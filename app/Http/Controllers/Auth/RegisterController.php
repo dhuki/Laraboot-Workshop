@@ -41,6 +41,19 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application's register form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegisterForm()
+    {
+        if (!Auth::check()) {
+          return view('list-activity.register');
+        }
+        return redirect()->route('index');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
