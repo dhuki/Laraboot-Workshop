@@ -15,6 +15,11 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 
 Auth::routes();
 
+//Route::get('/activity', 'ListActivityController@index')->name('index');
+//Route::get('/test', 'Auth\RegisterController@showRegistrationForm')->name('registerr');
+Route::get('/test', 'Auth\RegisterController@lihatregis')->name('registerr');
+
+
 Route::get('/activity', 'ListActivityController@index')->name('index');
 Route::get('/activity/create', 'ListActivityController@create')->name('create');
 Route::post('/activity/store', 'ListActivityController@store')->name('store');

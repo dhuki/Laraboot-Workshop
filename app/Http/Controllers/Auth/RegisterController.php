@@ -54,6 +54,11 @@ class RegisterController extends Controller
         return redirect()->route('index');
     }
 
+    public function lihatregis()
+    {
+        echo "test";
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
