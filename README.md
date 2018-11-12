@@ -48,7 +48,7 @@ DB_PASSWORD=
 php artisan key:generate
 ```
 
-6. Lakukan pembuatan database di MySQL melalui Phpmyadmin di `localhost/phpmyadmin`. **PASTIKAN NAMA DATABASE SESUAI DENGAN YANG ADA DALAM FILE** `.env`
+6. Lakukan pembuatan database di MySQL melalui Phpmyadmin di `localhost/phpmyadmin`. **PASTIKAN NAMA DATABASE SESUAI DENGAN YANG ADA DALAM FILE `.env` PADA VALUE `DB_DATABASE` **
 
 7. Lakukan migrasi database dengan perintah
 ```bash
