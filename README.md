@@ -67,16 +67,18 @@ localhost:8000
 
 ## Documentation
 
-1. [Bootstrap Documentation](https://getbootstrap.com/docs/3.3/css/)
+1. [Bootstrap Documentation](https://getbootstrap.com/docs/3.3/css)
 
 2. [Laravel Documentation](https://laravel.com/docs/5.7)
 
 3. [Admin LTE Documentation](https://adminlte.io/docs/2.4/installation)
 
+3. [W3Schools](https://www.w3schools.com)
+
 ## File Pendukung Workshop
 
 1. [Slide Day 1](https://bit.ly/laraboot-slide)
 
-2. [Download Template Admin LTE Minified](https://bit.ly/laraboot-lte)
+2. [Download Template Admin LTE LaraBoot](https://bit.ly/laraboot-lte)
 
-3. [Download Template Admin LTE Minified - FIX Project](https://bit.ly/laraboot-lte-fix)
+3. [Download Template Admin LTE LaraBoot - FIX Project](https://bit.ly/laraboot-lte-fix)
