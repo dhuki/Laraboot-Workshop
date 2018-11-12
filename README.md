@@ -16,7 +16,7 @@ git clone https://github.com/fakhrifauzan/Laraboot-Workshop.git
 cd Laraboot-Workshop
 ```
 
-3. Lakukan instalasi Dependency Laravel
+3. Lakukan instalasi Dependency package Laravel
 
 ```composer
 composer update
@@ -48,14 +48,14 @@ DB_PASSWORD=
 php artisan key:generate
 ```
 
-6. Lakukan pembuatan database di MySQL melalui Phpmyadmin di `localhost/phpmyadmin`. **PASTIKAN NAMA DATABASE SESUAI DENGAN YANG ADA DALAM FILE `.env` PADA VALUE `DB_DATABASE` **
+6. Lakukan pembuatan database di MySQL melalui Phpmyadmin di `localhost/phpmyadmin`. **PASTIKAN NAMA DATABASE SESUAI DENGAN YANG ADA DALAM FILE** `.env` **PADA VALUE** `DB_DATABASE`.
 
-7. Lakukan migrasi database dengan perintah
+7. Lakukan migrasi database menggunakan perintah artisan
 ```bash
 php artisan migrate
 ```
 
-7. Jalankan project laravel anda
+7. Jalankan project laravel anda menggunakan perintah artisan
 ```bash
 php artisan serve
 ```
